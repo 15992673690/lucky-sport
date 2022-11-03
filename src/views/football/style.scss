@@ -1,0 +1,168 @@
+.layout-title-logo {
+    width: 16px;
+    height: 16px;
+}
+.layout-title-text {
+    @include font(500, 16px, 22px);
+}
+.football-banner {
+    @include flex-center();
+    background-image: url(@/assets/imgs/football-bg.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 210px;
+    position: relative;
+    &-module {
+        
+        width: 304px;
+        padding: 6px;
+        box-sizing: border-box;
+        position: relative;
+        color: $white;
+        .module-title {
+            @include flex-cell();
+            @include font(600, 12px, 17px);
+            background: linear-gradient(180deg, #FFEDA0 0%, #F5D135 68.75%);
+            border-radius: 4px;
+            height: 24px;
+            padding: 0 8px;
+            color: $black;
+            .host {
+
+            }
+            .partition {
+                background-image: url(@/assets/imgs/emblem.png);
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                width: 102px;
+                height: 100%;
+                line-height: 22px;
+                flex: 0 0 120px;
+                text-align: center;
+                color: $white;
+            }
+            .away {
+                
+            }
+        }
+        .module-main {
+            @include flex-justify-between();
+            background-image: url(@/assets/imgs/module-bg.png);
+            background-size: 100% 100%;
+            width: calc(100% - 4px);
+            margin: 0 auto;
+            height: 145px;
+            padding: 36px 24px 0;
+            box-sizing: border-box;
+            .host, .away {
+                width: 40px;
+                height: 56px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: 50% 0;
+            }
+            .lever {
+                @include flex();
+                position: absolute;
+                bottom: 12px; left: 50%;
+                transform: translateX(-50%);
+                width: fit-content;
+                border-radius: 4px;
+                backdrop-filter: blur(15px);
+                background-color: rgba($black, .4);
+                padding: 0 10px;
+                &-item {
+                    @include flex-align-center();
+                    @include border-right(1px, 12px, $white);
+                    @include font(500, 12px, 17px, $white);
+                    padding: 3px 14px;
+                    &:first-of-type {
+                        padding-left: 0;
+                    }
+                    &:last-of-type {
+                        @include border-right(0, 12px, $white);
+                        padding-right: 0;
+                    }
+                    .iconfont {
+                        margin-right: 4px;
+                    }
+                }
+            }
+            .partition {
+                text-align: center;
+                &-text {
+                    background: linear-gradient(180deg, $white 35.94%, #D6D6D6 55.21%, white 73.44%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    text-fill-color: transparent;
+                }
+            }
+            &.status1 {
+                .partition-sub {
+                    @include font(400, 12px, 17px, white);
+                    .date {
+                        margin-right: 8px;
+                    }
+                }
+                .partition-text {
+                    @include font(900, 32px, 39px, white);
+                }
+            }
+            &.status2 {
+                .partition-sub {
+                    @include font(400, 12px, 17px, #ffffff);
+                }
+                .partition-text {
+                    @include font(900, 32px, 39px, #ffffff);
+                    .unit {
+                        @include font(900, 24px, 29px, #ffffff);
+                        margin: 0 16px;
+                    }
+                }
+            }
+        }
+        .module-swing {
+            width: 44px;
+            position: absolute;
+            left: 0; bottom: 0;
+            transform: translate(-40%, 40%);
+        }
+    }
+    &-mask {
+        position: absolute;
+        left: 0; right: 0;
+        top: 0; bottom: 0;
+        background-color: $black;
+        background-image: url(@/assets/imgs/banner.png);
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        padding: 0 16px;
+        box-sizing: border-box;
+        color: $white;
+       .mask-title {
+            @include flex-cell();
+            padding: 16px 0;
+            &-left {
+                    
+            }
+            &-right {
+                @include flex-align-center();
+                .prev {
+                    transform: rotate(90deg);
+                }
+                .next {
+                    transform: rotate(-90deg);
+                }
+                .page {
+                    margin: 0 8px;
+                    @include font(500, 12px, initial);
+                }
+            }
+       }
+    }
+}
+.football-bet {
+    padding: 12px 16px;
+    box-sizing: border-box;
+}

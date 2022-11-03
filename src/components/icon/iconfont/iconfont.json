@@ -1,0 +1,170 @@
+{
+  "id": "3730624",
+  "name": "Sport",
+  "font_family": "font_family",
+  "css_prefix_text": "",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "32561505",
+      "name": "icon_pick_nor",
+      "font_class": "icon_pick_nor",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "32560838",
+      "name": "icon_option_noraml",
+      "font_class": "icon_option_noraml",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "32560839",
+      "name": "icon_option_light",
+      "font_class": "icon_option_light",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "32557672",
+      "name": "icon_arrow",
+      "font_class": "icon_arrow",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "32557673",
+      "name": "icon_data",
+      "font_class": "icon_data",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "32557674",
+      "name": "icon_video",
+      "font_class": "icon_video",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "32557469",
+      "name": "VS",
+      "font_class": "VS",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "32557180",
+      "name": "icon_home_lock",
+      "font_class": "icon_home_lock",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "32557233",
+      "name": "icon_pop-up_close",
+      "font_class": "icon_pop-up_close",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "32555716",
+      "name": "icon_home_pick",
+      "font_class": "icon_home_pick",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "32555717",
+      "name": "icon_home_live",
+      "font_class": "icon_home_live",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "32551158",
+      "name": "icon_close_1",
+      "font_class": "icon_close_1",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "32550912",
+      "name": "icon_collapse",
+      "font_class": "icon_collapse",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "32550914",
+      "name": "icon_bin",
+      "font_class": "icon_bin",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "32550915",
+      "name": "icon_tips",
+      "font_class": "icon_tips",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "32550917",
+      "name": "icon_notice",
+      "font_class": "icon_notice",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "32550918",
+      "name": "icon_search",
+      "font_class": "icon_search",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "32550919",
+      "name": "icon_bet",
+      "font_class": "icon_bet",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "32550920",
+      "name": "icon_collection",
+      "font_class": "icon_collection",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "32550921",
+      "name": "icon_more",
+      "font_class": "icon_more",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "32550923",
+      "name": "icon_transform",
+      "font_class": "icon_transform",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "32550925",
+      "name": "icon_back",
+      "font_class": "icon_back",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "32527775",
+      "name": "icon_backspace",
+      "font_class": "icon_backspace",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    }
+  ]
+}

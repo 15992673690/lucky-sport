@@ -1,0 +1,303 @@
+.van-nav-bar {
+    --van-nav-bar-background-color: #{$header-bg-color}; 
+    &::after {
+        display: none;
+    }
+}
+.sport {
+    &-tab {
+        background-color: $header-bg-color;
+        background-image: url(@/assets/imgs/banner.png);
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position-y: -$header-height;
+        padding-top: 12px + $header-height;
+        padding-bottom: 8px;
+        padding-left: 20px;
+        padding-right: 20px;
+        // margin-top: -#{$header-height};
+        &-item {
+            width: auto;
+            @include flex-column-center();
+            .item-img {
+                width: 48px;
+                height: 48px;
+                margin-bottom: 8px ;
+            }
+            .item-name {
+                @include font(600, 14px, 24px, #DCDFE7);
+            }
+            &.active {
+                .item-name {
+                    @include font(600, 14px, 24px, $primary-color);
+                }
+            }
+        }
+    } 
+    &-ball {
+        &-list {
+            padding: 16px;
+        }
+    }
+    &-card {
+        box-shadow: 0px 4px 12px rgba(30, 30, 30, 0.05);
+        border-radius: 8px;
+        &-header { 
+            height: 40px;
+            padding: 0 12px;
+            position: relative;
+            background-color: $white;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            @include flex-cell();
+            &::before {
+                content: "";
+                width: calc(100% - 24px);
+                height: 1px;
+                position: absolute;
+                left: 50%; bottom: 0;
+                transform: translateX(-50%);
+                background-color: $border-color;
+            }
+            .header-sizer {
+                --van-button-default-height: 25px;
+                --van-button-default-line-height: 25px;
+                --van-button-normal-font-size: 12px;
+                --van-button-primary-background-color: #ECF1F1;
+                --van-button-primary-border-color: #ECF1F1;
+                --van-button-border-radius: 4px;
+                --van-button-primary-color: $white;
+                padding: 4px 8px;
+                font-weight: 500;
+                .iconfont {
+                    margin: 0 4px;
+                }
+            }
+            .header-right {
+                @include flex-align-center();
+                &-sizer {
+                    margin-right: 12px;
+                    @include flex-align-center();
+                    >span {
+                        @include font(400, 12px, 17px, #999999);
+                    }
+                    >.iconfont {
+                        margin: 0 4px;
+                    }
+                    &[data-active='1'] {
+                        >span:nth-of-type(1) {
+                            @include font(500, 12px, 17px, $black);
+                        }
+                    }
+                    &[data-active='2'] {
+                        >span:nth-of-type(1) {
+                            @include font(500, 12px, 17px, $black);
+                        }
+                    }
+                }
+            }
+        }
+        &-wrapper {
+            min-height: 60px;
+        }
+        &-item {
+            overflow: hidden;
+            &[data-view='slideDowm'] {
+                box-shadow: 0px 0px 12px rgba(30, 30, 30, 0.05);
+                margin-bottom: 8px;
+                .cell-right {
+                    transform: rotate(0deg);
+                }
+                .sport-card-main {
+                    border-bottom-left-radius: 8px;
+                    border-bottom-right-radius: 8px;
+                    height: fit-content;
+                }
+            }
+            &[data-view='slideUp'] {
+                box-shadow: 0px 0px 12px rgba(30, 30, 30, 0.05);
+                .cell-right {
+                    transform: rotate(180deg);
+                }
+                .sport-card-main {
+                    border-bottom-left-radius: 0px;
+                    border-bottom-right-radius: 0px;
+                    height: 0;
+                }
+            }
+        }
+        &-cell {
+            height: 40px;
+            padding: 0 12px;
+            background-color: $white;
+            @include flex-cell();
+            .cell-left {
+                @include flex-align-center();
+            }
+            .cell-right {
+                transition: all .5s;
+                transform-origin: 50% 50%;
+            }
+            .cell-logo {
+                width: 14px;
+                height: 14px;
+                margin-right: 4px;
+            }
+            .cell-name {
+                @include font(400, 12px, 17px);
+            }
+        }
+        &-main {
+            transform: all .5s;
+            background-color: $white;
+            .main-top, .main-bottom {
+                @include flex-cell();
+            }
+            .main-top {
+                height: 33px;
+                padding: 0 12px;
+                background-color: $body-bg-color;
+                &-left {
+                    .iconfont {
+                        margin-right: 12px;
+                    }
+                }
+                &-right {
+                    width: 178px;
+                    @include flex-align-center();
+                    >div {
+                        @include font(500, 12px, 17px, #B5B5B5);
+                        text-align: center;
+                        flex: 0 0 54px;
+                        margin-right: 8px;
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+            .main-bottom {
+                padding: 0 12px;
+                padding-bottom: 12px;
+                &-left {
+                    .left-party {
+                        margin-bottom: 20px;
+                        padding: 22px 0;
+                        @include border-bottom(104px, 1px);
+                        &-item {
+                            @include font(500, 14px, 20px);
+                            @include flex-align-center();
+                            margin-bottom: 24px;
+                            &:last-of-type {
+                                margin-bottom: 0;
+                            }
+                            >img {
+                                width: 18px;
+                                height: 18px;
+                                margin-right: 6px ;
+                            }
+                        }
+                    }
+                    .left-date {
+                        @include font(400, 12px, 17px);
+                        margin-bottom: 6px;
+                        text-align: center
+                    }
+                    .left-score {
+                        @include flex-align-center();
+                        .score {
+                            padding-right: 16px;
+                            @include border-right(1px, 16px);
+                            @include flex-align-center();
+                            @include font(700, 16px, 19px, #1E1E1E);
+                            &::before {
+                                content: "";
+                                display: block;
+                                width: 7px;
+                                height: 2px;
+                                background-color: #B5B5B5;
+                                order: 2;
+                                margin: 0 6px;
+                            }
+                            >span:nth-of-type(1) {
+                                order: 1;
+                            }
+                            >span:nth-of-type(2) {
+                                order: 3;
+                            }
+                        }
+                        .half {
+                            padding-left: 16px;
+                            @include font(500, 12px, initial, #B5B5B5);
+                        }
+                    }
+                }
+                &-right {
+                    padding-top: 6px;
+                    @include flex();
+                    .right-item {
+                        width: 54px;
+                        height: 150px;
+                        margin-right: 8px;
+                        @include flex-direction-column();
+                        @include flex-justify-between();
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                        &:first-child {
+                            .right-item-chunk {
+                                >span:nth-child(2) {
+                                    margin-top: 4px;
+                                }
+                            }
+                        }
+                        &-chunk {
+                            @include font(500, 12px, 17px, #B5B5B5);
+                            @include flex-center();
+                            @include flex-direction-column();
+                            height: 100%;
+                            background: rgba(0, 0, 0, 0.05);
+                            border-radius: 4px;
+                            margin-bottom: 4px;
+                            text-align: center;
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                            >span:nth-child(2) {
+                                @include font(700, 14px, 15px, $black);
+                                margin-top: 6px;
+                                &.up, &.down {
+                                    @include flex-align-center();
+                                    &::after {
+                                        content: "";
+                                        width: 0;
+                                        height: 0;
+                                        display: block;
+                                        margin-left: 3px;
+                                        border-style: solid;
+                                    }
+                                }
+                                &.up {
+                                    &::after {
+                                        border-width: 0px 3.5px 6px 3.5px;
+                                        border-color: transparent transparent $success-color transparent;
+                                    }
+                                }
+                                &.down {
+                                    &::after {
+                                        border-width: 6px 3.5px 0px 3.5px;
+                                        border-color: $error-color transparent transparent transparent;
+                                    }
+                                }
+                            }
+                            &.active {
+                                background-color: $primary-color;
+                                color: $black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

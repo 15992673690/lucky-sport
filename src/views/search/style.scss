@@ -1,0 +1,98 @@
+
+$search-height: 44px;
+.search-title {
+    @include flex-cell();
+    padding: 6px 16px;
+    height: $search-height;
+    box-sizing: border-box;
+    background-color: $white;
+    position: sticky;
+    top: 0;
+    .van-field {
+        // padding: 0;
+        width: 280px;
+        // height: 32px;
+        flex: 0 0 280px;
+        background-color: #ECF1F1;
+        border-radius: 8px;
+        padding: 3.5px 10px;
+        ::v-deep {
+            .van-field__left-icon {
+                margin-right: 8px;
+            }
+        }
+        &::after {
+            display: none;
+        }
+    }
+    .cancel {
+        @include font(400, 16px, 22px);
+        cursor: pointer;
+    }
+    &+.tab {
+        position: sticky;
+        top: 44px;
+    }
+}
+.search-list {
+    padding: 12px 16px;
+    &-item {
+        padding: 8px 12px;
+        background-color: $white;
+        box-shadow: 0px 4px 12px rgba(30, 30, 30, 0.05);
+        border-radius: 8px;
+        margin-bottom: 12px;
+    }
+    &-col {
+        @include flex-align-center();
+        margin-bottom: 8px;
+        &:nth-of-type(1)::after {
+            @include font(500, 14px, 20px);
+            content: "-";
+            display: block;
+            margin: 0 12px;
+            color: $black;
+            order: 2;
+        }
+        &:nth-of-type(2)::after {
+            content: "";
+            display: block;
+            margin: 0 4px;
+            order: 2;
+        }
+        &:nth-of-type(3)::after {
+            content: "\e619";
+            display: block;
+            margin: 0 4px;
+            color: #999999;
+            order: 2;
+            font-family: "font_family" !important;
+        }
+        >div:nth-of-type(1) {
+            order: 1;
+        }
+        >div:nth-of-type(2) {
+            order: 3;
+        }
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+        .item-host, .item-away {
+            @include font(500, 14px, 20px);
+            max-width: 45%;
+            flex: 0 0 45%;
+            .item-logo {
+                width: 14px;
+                height: 14px;
+                margin-right: 4px;
+                margin-bottom: -2PX;
+            }
+        }
+        .item-date, .item-time {
+            @include font(400, 12px, 17px, #999999);
+        }
+        .item-ball, .item-league {
+            @include font(400, 12px, 17px, #999999);
+        }
+    }
+}

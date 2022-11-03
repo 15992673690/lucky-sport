@@ -1,0 +1,94 @@
+.bet {
+    padding: 16px;
+    &-card {
+        background-color: $white;
+        box-shadow: 0px 4px 12px rgba(30, 30, 30, 0.05);
+        border-radius: 8px;
+        position: relative;
+        margin-bottom: 16px;
+        padding: 0 12px;
+        &-title {
+            border-bottom: 1px dashed $border-color;
+        }
+        &-footer {
+            border-top: 1px dashed $border-color;
+        }
+        &-title, &-footer {
+            @include flex-align-center();
+            @include font(500, 12px, 17px, #999999);
+            height: 40px;
+            >span {
+                margin-right: 6px;
+            }
+        }
+        &-game {
+            padding: 12px 0;
+            .game-item {
+                margin-bottom: 20px;
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+                &-col {
+                    @include flex-cell();
+                    margin-bottom: 8px;
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                    .item-team, .item-odds {
+                        @include font(500, 14px, 20px);
+                    }
+                    .item-team{
+                        @include remark();
+                    }
+                    .item-type, .item-host, .item-away {
+                        @include font(500, 12px, 17px, #999999);
+                        margin-left: 12px;
+                    }
+                }
+            }
+        }
+        &-result {
+            .item-result {
+                width: 60px;
+                height: 24px;
+                position: absolute;
+                bottom: 12px; right: 12px;
+                z-index: 1;
+            }
+        }
+    }
+    &-collect {
+        .bet-card-title {
+            @include font(500, 14px, 20px);
+        }
+        .bet-card-game {
+            .game-item {
+                @include flex-cell();
+                >span {
+                    &:first-of-type {
+                        @include font(500, 12px, 17px, #999999);
+                    }
+                    &:last-of-type {
+                        @include font(700, 14px, 16px);
+                    }
+                    &.up {
+                        @include font(700, 16px, 19px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.noDetail {
+    @include flex-center();
+    @include flex-direction-column();
+    margin-top: 160px;
+    &-img {
+        width: 180px;
+        height: 180px;
+    }
+    &-text {
+        @include font(500, 16px, 22px);
+    }
+}

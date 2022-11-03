@@ -1,0 +1,157 @@
+.bet {
+    .tab {
+        position: sticky;
+        top: 0;
+        ::v-deep {
+            .swiper-wrapper {
+                @include flex-justify-center();
+                .swiper-slide:last-child {
+                    margin-right: 0 !important;
+                }
+            }
+        }
+    }
+    &-wrapper {
+        padding: 8px;
+        .bet-card {
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: 50% 50%;
+            background-image: url(@/assets/imgs/card-bg.png);
+            border-radius: 8px;
+            padding: 10px 24px;
+            position: relative;
+            &-title {
+                @include flex-align-center();
+                @include font(500, 12px, 17px, #999999);
+                height: 40px;
+                border-bottom: 1px dashed $border-color;
+                >span {
+                    margin-right: 6px;
+                }
+            }
+            &-game {
+                padding: 12px 0;
+                .game-item {
+                    margin-bottom: 20px;
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                    &-col {
+                        @include flex-cell();
+                        margin-bottom: 8px;
+                        &:last-of-type {
+                            margin-bottom: 0;
+                        }
+                        .item-team, .item-odds {
+                            @include font(500, 14px, 20px);
+                        }
+                        .item-team{
+                            @include remark();
+                        }
+                        .item-type {
+                            @include font(500, 12px, 17px, #999999);
+                            margin-left: 12px;
+                        }
+                    }
+                }
+            }
+            &-total {
+                @include flex-justify-between();
+                @include flex-wrap();
+                background-color: $body-bg-color;
+                min-height: 60px;
+                padding: 12px;
+                box-sizing: border-box;
+                .total-message {
+                    @include flex-align-center();
+                    >span {
+                        @include border-right(1px, 12px);
+                        @include font(400, 12px, 17px, #999999);
+                        padding: 0 6px;
+                        &:first-of-type {
+                            padding-left: 0;
+                        }
+                        &:last-of-type {
+                            @include border-right(0px, 12px);
+                            padding-right: 0;
+                        }
+                    }
+                }
+                .total-bet, .total-return {
+                    @include flex-align-center();
+                    >span {
+                        &:first-of-type {
+                            @include font(500, 12px, 17px);
+                        }
+                        &:last-of-type {
+                            @include font(700, 16px, 19px);
+                        }
+                    }
+                }
+                .total-return {
+                    &.up, &.down {
+                        &::after {
+                            content: "\e621";
+                            font-family: "font_family" !important;
+                            transform: rotate(-90deg);
+                            color: $border-color;
+                            margin-left: 4px;
+                        }
+                    }
+                }
+            }
+            &-result {
+                .item-result {
+                    width: 60px;
+                    height: 24px;
+                    position: absolute;
+                    top: 4px; right: 24px;
+                    z-index: 1;
+                }
+            }
+            >div:last-of-type {
+                margin-bottom: 32px;
+            }
+        }
+        &.unliquidated {
+            .bet-card {
+                &-total {
+                    .total-bet {
+                        >span {
+                            &:first-of-type {
+                                color: #999999;
+                            }
+                            &:last-of-type {
+                                @include font(700, 16px, 19px);
+                            }
+                        }
+                    }
+                    .total-message {
+                        width: auto;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+        &.settled {
+            .bet-card {
+                &-total {
+                    .total-bet {
+                        color: #999999;
+                        font-size: 14px;
+                        >span {
+                            &:last-of-type {
+                                @include font(700, 14px, 16px);
+                            }
+                        }
+                    }
+                    .total-message {
+                        width: 100%;
+                        margin-bottom: 12px;
+                    }
+                }
+            }
+        }
+    }
+}

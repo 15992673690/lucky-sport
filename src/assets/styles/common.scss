@@ -1,0 +1,171 @@
+$white                                                  : #fff;
+$black                                                  : #1E1E1E;
+$primary-color                                          : #F5D135;
+$success-color                                          : #3FC07B;
+$error-color                                            : #DA424F;
+$body-bg-color                                          : #FAFAFA;   
+$header-bg-color                                        : rgba(#1E1E1E, .9);
+$border-color                                           : #DCDFE7;
+$header-height                                          : 44px;
+$tab-height                                             : 44px;
+$slide-width                                            : 240px;
+
+
+@mixin flex {
+    display: flex;
+}
+@mixin flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+@mixin flex-align-center {
+    display: flex;
+    align-items: center;
+}
+@mixin flex-justify-center {
+    display: flex;
+    justify-content: center;
+}
+@mixin flex-cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex-justify-between {
+    display: flex;
+    justify-content: space-between;
+}
+@mixin flex-direction-column {
+    display: flex;
+    flex-direction: column;
+}
+@mixin flex-column-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+@mixin flex-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@mixin font($weight, $size, $lineHeight, $color: inherit) {
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $lineHeight;
+    color: $color;
+}
+@mixin remark($size: 6px, $color: $primary-color, $right: 6px) {
+    @include flex-align-center();
+    &::before {
+        content: "";
+        display: block;
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+        margin-right: $right;
+        background-color: $color;
+    }
+}
+@mixin border-bottom($width: 100%, $height: 1px, $border-color: $border-color, $radius: 0px) {
+    position: relative;
+    &::after {
+        content: "";
+        display: block;
+        width: $width;
+        height: $height;
+        border-radius: $radius;
+        background-color: $border-color;
+        position: absolute;
+        bottom: 0; left: 50%;
+        transform: translateX(-50%);
+    }
+}
+@mixin border-right($width: 100%, $height: 1px, $border-color: $border-color, $radius: 0px) {
+    position: relative;
+    &::after {
+        content: "";
+        display: block;
+        width: $width;
+        height: $height;
+        border-radius: $radius;
+        background-color: $border-color;
+        position: absolute;
+        right: 0; top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+
+
+.van-button {
+    border-radius: 4px;
+    --van-button-primary-color: #{$black};
+    --van-button-primary-background-color: #{$primary-color};
+    --van-button-primary-border-color: #{$primary-color};
+    &--disabled {
+        opacity: 1;
+        --van-button-primary-color: #999999;
+        --van-button-primary-background-color: rgba(0, 0, 0, 0.05);
+        --van-button-primary-border-color: rgba(0, 0, 0, 0.05);
+    }
+}
+
+.van-loading {
+    --van-loading-spinner-size: 26px;
+    @include flex-center();
+    height: 100px;
+}
+
+.icon_arrow {
+    &[data-direction='top'] {
+        transform: rotate(180deg);
+    }
+    &[data-direction='bottom'] {
+        transform: rotate(0deg);
+    }
+    &[data-direction='left'] {
+        transform: rotate(90deg);
+    }
+    &[data-direction='right'] {
+        transform: rotate(-90deg);
+    }
+}
+
+.up {
+    color: $success-color !important;
+    &.arrow {
+        @include flex-align-center();
+        &::after {
+            content: "";
+            width: 0;
+            height: 0;
+            display: block;
+            margin-left: 3px;
+            border-style: solid;
+            border-width: 0px 3.5px 6px 3.5px;
+            border-color: transparent transparent $success-color transparent;
+        } 
+    }
+}
+.down {
+    color: $error-color !important;
+    &.arrow {
+        @include flex-align-center();
+        &::after {
+            content: "";
+            width: 0;
+            height: 0;
+            display: block;
+            margin-left: 3px;
+            border-style: solid;
+            border-width: 6px 3.5px 0px 3.5px;
+            border-color: $error-color transparent transparent transparent;
+        } 
+    }
+}
